@@ -1,0 +1,80 @@
+2016-03-15 11:42:37.305 [Configurador.java:60] [DEBUG] leyendo configuraciones de D:\WKS\Probatch_Agentes\ServicioProBatch\mantis.conf
+2016-03-15 11:42:37.309 [ServicioAgente.java:128] [DEBUG] DEBUG MODE=0
+2016-03-15 11:42:37.326 [ServicioAgente.java:138] [DEBUG] CONFIGURACION={DEBUG_RUN_DEBUG_DUMMY_CMD:4, runAsUser:./lib/runAsUser.exe, shellScript:/opt/ProbatchHP/pbwin/lib/ExecuteScript.sh, DEBUG_RUN_SPEC_CMD_ONLY:2, debugDummyCmd:"ls -l", logdays:5, max_returned_log_size:20000000, port:6701, debugMode:0, envCmd:. /sybase/SYBASE.sh; DSQUERY=SYBFACE;export DSQUERY ; . /sybase/setenv.sh , wrkdir:., heartbeat_interval:60, dump_file:estados-6700, do_authentication:true, ignore_re:^$, DEBUG_MODE_OFF:0, clean_logs:15, target_os:Windows Vista, comandosString:C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe, DEBUG_RUN_CMD_NO_HEADERS:1, timeout:8.0, usuariosString:syspro, marcos.barroso@accusysargbsas.local, usuarios:[syspro, marcos.barroso@accusysargbsas.local], output_maxsize:4096, dump_interval:30, comandos:[C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe], logfile:probatch.log, key:MPBKeyED, result_maxsize:56, debugOs:, cmdEscapeType:0, logger:Logger[ast.servicio.probatch.configuration.Configurador], DEBUG_RUN_SU_CHDIR:3, winRunAs:./lib/WinRunAs.exe,}
+2016-03-15 11:42:37.326 [ServicioAgente.java:142] [INFO] probatch version 5.0.0
+2016-03-15 11:42:37.326 [ServicioAgente.java:143] [INFO] Escuchando en el puerto 6701
+2016-03-15 11:42:57.442 [Conexion.java:44] [INFO] El cliente se conecto desde /172.28.194.131:51759
+2016-03-15 11:42:57.544 [Conexion.java:78] [DEBUG] CLI <-- <autenticacion>%04%fb%5d%f0%79%d2%2a%da%4c%fe</autenticacion>
+2016-03-15 11:42:57.545 [Conexion.java:79] [DEBUG] CLI --> <autenticacion>%81%4F%7F%AB%F8%97%64%08</autenticacion>
+2016-03-15 11:42:57.665 [Conexion.java:56] [INFO] Autenticacion exitosa.
+2016-03-15 11:42:57.665 [Heartbeat.java:30] [DEBUG] CLI <-- <latido/>
+2016-03-15 11:42:57.679 [ServicioAgente.java:196] [DEBUG] CLI --> <validar></validar>
+2016-03-15 11:42:57.680 [ServiceDump.java:96] [INFO] Dump!
+2016-03-15 11:42:57.680 [ServiceProcessMessage.java:38] [INFO] procesando <validar></validar>...
+2016-03-15 11:42:57.686 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <validar></validar>
+2016-03-15 11:42:58.908 [ServicioAgente.java:196] [DEBUG] CLI --> <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>
+2016-03-15 11:42:58.909 [ServiceProcessMessage.java:38] [INFO] procesando <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>...
+2016-03-15 11:42:58.945 [MensajeProceso.java:176] [INFO] corriendo..../lib/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe'
+2016-03-15 11:42:58.955 [MensajeProceso.java:137] [ERROR] CreateProcess: .\lib\runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local Febrero2016 "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true" error=2
+2016-03-15 11:42:58.956 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <error id="96555" nombre="PRUEBA BAT" ts="1458060178">La ruta al programa debe ser una especificacion absoluta o ser un comando predefinido: ./lib/runAsUser.exe</error>
+2016-03-15 11:43:19.638 [ServicioAgente.java:205] [ERROR] El cliente cerro la conexion
+2016-03-15 11:43:19.638 [ServicioAgente.java:207] [ERROR] Connection reset
+2016-03-15 11:43:19.638 [ServicioAgente.java:229] [DEBUG] Cerrando STREAMS!
+2016-03-15 11:44:10.263 [Configurador.java:60] [DEBUG] leyendo configuraciones de D:\WKS\Probatch_Agentes\ServicioProBatch\mantis.conf
+2016-03-15 11:44:10.268 [ServicioAgente.java:128] [DEBUG] DEBUG MODE=0
+2016-03-15 11:44:10.271 [ServicioAgente.java:138] [DEBUG] CONFIGURACION={DEBUG_RUN_DEBUG_DUMMY_CMD:4, runAsUser:/lib/runAsUser.exe, shellScript:/opt/ProbatchHP/pbwin/lib/ExecuteScript.sh, DEBUG_RUN_SPEC_CMD_ONLY:2, debugDummyCmd:"ls -l", logdays:5, max_returned_log_size:20000000, port:6701, debugMode:0, envCmd:. /sybase/SYBASE.sh; DSQUERY=SYBFACE;export DSQUERY ; . /sybase/setenv.sh , wrkdir:., heartbeat_interval:60, dump_file:estados-6700, do_authentication:true, ignore_re:^$, DEBUG_MODE_OFF:0, clean_logs:15, target_os:Windows Vista, comandosString:C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe, DEBUG_RUN_CMD_NO_HEADERS:1, timeout:8.0, usuariosString:syspro, marcos.barroso@accusysargbsas.local, usuarios:[syspro, marcos.barroso@accusysargbsas.local], output_maxsize:4096, dump_interval:30, comandos:[C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe], logfile:probatch.log, key:MPBKeyED, result_maxsize:56, debugOs:, cmdEscapeType:0, logger:Logger[ast.servicio.probatch.configuration.Configurador], DEBUG_RUN_SU_CHDIR:3, winRunAs:./lib/WinRunAs.exe,}
+2016-03-15 11:44:10.271 [ServicioAgente.java:142] [INFO] probatch version 5.0.0
+2016-03-15 11:44:10.271 [ServicioAgente.java:143] [INFO] Escuchando en el puerto 6701
+2016-03-15 11:44:13.292 [Conexion.java:44] [INFO] El cliente se conecto desde /172.28.194.131:51760
+2016-03-15 11:44:13.396 [Conexion.java:78] [DEBUG] CLI <-- <autenticacion>%04%fb%5d%f0%79%d2%2a%d9%4e%fa</autenticacion>
+2016-03-15 11:44:13.396 [Conexion.java:79] [DEBUG] CLI --> <autenticacion>%83%FF%6B%45%68%1C%24%07</autenticacion>
+2016-03-15 11:44:13.402 [Conexion.java:56] [INFO] Autenticacion exitosa.
+2016-03-15 11:44:13.402 [Heartbeat.java:30] [DEBUG] CLI <-- <latido/>
+2016-03-15 11:44:13.404 [ServiceDump.java:96] [INFO] Dump!
+2016-03-15 11:44:13.415 [ServicioAgente.java:196] [DEBUG] CLI --> <validar></validar>
+2016-03-15 11:44:13.417 [ServiceProcessMessage.java:38] [INFO] procesando <validar></validar>...
+2016-03-15 11:44:13.422 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <validar></validar>
+2016-03-15 11:44:15.265 [ServicioAgente.java:196] [DEBUG] CLI --> <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>
+2016-03-15 11:44:15.266 [ServiceProcessMessage.java:38] [INFO] procesando <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>...
+2016-03-15 11:44:15.275 [MensajeProceso.java:176] [INFO] corriendo.../lib/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe'
+2016-03-15 11:44:15.276 [MensajeProceso.java:137] [ERROR] CreateProcess: \lib\runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local Febrero2016 "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true" error=2
+2016-03-15 11:44:15.277 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <error id="96555" nombre="PRUEBA BAT" ts="1458060255">La ruta al programa debe ser una especificacion absoluta o ser un comando predefinido: /lib/runAsUser.exe</error>
+2016-03-15 11:44:30.077 [ServicioAgente.java:205] [ERROR] El cliente cerro la conexion
+2016-03-15 11:44:30.077 [ServicioAgente.java:207] [ERROR] Connection reset
+2016-03-15 11:44:30.077 [ServicioAgente.java:229] [DEBUG] Cerrando STREAMS!
+2016-03-15 11:45:36.333 [Configurador.java:60] [DEBUG] leyendo configuraciones de D:\WKS\Probatch_Agentes\ServicioProBatch\mantis.conf
+2016-03-15 11:45:36.338 [ServicioAgente.java:128] [DEBUG] DEBUG MODE=0
+2016-03-15 11:45:36.341 [ServicioAgente.java:138] [DEBUG] CONFIGURACION={DEBUG_RUN_DEBUG_DUMMY_CMD:4, runAsUser:./runAsUser/runAsUser.exe, shellScript:/opt/ProbatchHP/pbwin/lib/ExecuteScript.sh, DEBUG_RUN_SPEC_CMD_ONLY:2, debugDummyCmd:"ls -l", logdays:5, max_returned_log_size:20000000, port:6701, debugMode:0, envCmd:. /sybase/SYBASE.sh; DSQUERY=SYBFACE;export DSQUERY ; . /sybase/setenv.sh , wrkdir:., heartbeat_interval:60, dump_file:estados-6700, do_authentication:true, ignore_re:^$, DEBUG_MODE_OFF:0, clean_logs:15, target_os:Windows Vista, comandosString:C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe, DEBUG_RUN_CMD_NO_HEADERS:1, timeout:8.0, usuariosString:syspro, marcos.barroso@accusysargbsas.local, usuarios:[syspro, marcos.barroso@accusysargbsas.local], output_maxsize:4096, dump_interval:30, comandos:[C:\WINDOWS\system32\cmd.exe, c:\windows\system32\ping.exe, c:\windows\system32\ipconfig.exe, C:\Program Files\Microsoft SQL Server\90\Tools\binn\osql.exe], logfile:probatch.log, key:MPBKeyED, result_maxsize:56, debugOs:, cmdEscapeType:0, logger:Logger[ast.servicio.probatch.configuration.Configurador], DEBUG_RUN_SU_CHDIR:3, winRunAs:./lib/WinRunAs.exe,}
+2016-03-15 11:45:36.341 [ServicioAgente.java:142] [INFO] probatch version 5.0.0
+2016-03-15 11:45:36.341 [ServicioAgente.java:143] [INFO] Escuchando en el puerto 6701
+2016-03-15 11:45:39.487 [Conexion.java:44] [INFO] El cliente se conecto desde /172.28.194.131:51763
+2016-03-15 11:45:39.593 [Conexion.java:78] [DEBUG] CLI <-- <autenticacion>%04%fb%5d%f0%79%d2%2a%d8%48%f0</autenticacion>
+2016-03-15 11:45:39.593 [Conexion.java:79] [DEBUG] CLI --> <autenticacion>%0F%3F%B6%D7%6C%1D%7D%52</autenticacion>
+2016-03-15 11:45:39.598 [Conexion.java:56] [INFO] Autenticacion exitosa.
+2016-03-15 11:45:39.599 [Heartbeat.java:30] [DEBUG] CLI <-- <latido/>
+2016-03-15 11:45:39.601 [ServiceDump.java:96] [INFO] Dump!
+2016-03-15 11:45:39.612 [ServicioAgente.java:196] [DEBUG] CLI --> <validar></validar>
+2016-03-15 11:45:39.613 [ServiceProcessMessage.java:38] [INFO] procesando <validar></validar>...
+2016-03-15 11:45:39.619 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <validar></validar>
+2016-03-15 11:45:40.765 [ServicioAgente.java:196] [DEBUG] CLI --> <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>
+2016-03-15 11:45:40.765 [ServiceProcessMessage.java:38] [INFO] procesando <proceso id="96555" nombre="PRUEBA BAT" categoria="batch" clase="">	<chdir>C:\Procesos</chdir>	<comando>cmd.exe</comando>	<arg>SleepVS_2.exe</arg>	<arg>60</arg>	<arg>true</arg>	<usuario clave="%b3%fc%b0%f1%89%1e%12%e0%95%6d%46">marcos.barroso@accusysargbsas.local</usuario></proceso>...
+2016-03-15 11:45:40.775 [MensajeProceso.java:176] [INFO] corriendo..../runAsUser/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe'
+2016-03-15 11:45:41.207 [MensajeProceso.java:194] [DEBUG] actualizarEstadoProceso::actualizando estados con:parametroP=./runAsUser/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe';estado=null
+2016-03-15 11:45:41.208 [MensajeProceso.java:196] [DEBUG] MensajeProceso solicita lista estado mensajes...
+2016-03-15 11:45:41.211 [ServiceProcessMessage.java:83] [DEBUG] CLI <-- <transicion id="96555" nombre="PRUEBA BAT" ts="1458060340" pidpadre="6748"><inicio/></transicion>
+2016-03-15 11:45:41.213 [Utils.java:422] [DEBUG] Utils::validaEsxpresionesRegulrares::"cadenaInput": ,"expresion": ^$ evaluacion OK!
+2016-03-15 11:45:41.227 [ListenerProceso.java:117] [DEBUG] CLI <-- <mensaje id="96555" nombre="PRUEBA BAT" ts="1458060340"></mensaje>
+2016-03-15 11:45:41.227 [Utils.java:426] [DEBUG] Utils::validaEsxpresionesRegulrares::"cadenaInput": SALIDA POR ERROR ,"expresion": ^$ evaluacion FALLA!
+2016-03-15 11:45:41.227 [ListenerProceso.java:117] [DEBUG] CLI <-- <mensaje id="96555" nombre="PRUEBA BAT" ts="1458060340">SALIDA POR ERROR </mensaje>
+2016-03-15 11:45:41.228 [Utils.java:426] [DEBUG] Utils::validaEsxpresionesRegulrares::"cadenaInput": CreateProcess failed 1314,"expresion": ^$ evaluacion FALLA!
+2016-03-15 11:45:41.228 [ListenerProceso.java:117] [DEBUG] CLI <-- <mensaje id="96555" nombre="PRUEBA BAT" ts="1458060340">CreateProcess failed 1314</mensaje>
+2016-03-15 11:45:41.229 [ParametrosProceso.java:246] [DEBUG] ParametrosProceso solicita lista estado mensajes...
+2016-03-15 11:45:42.229 [EjecutarProceso.java:128] [DEBUG] process.waitFor()=1314
+2016-03-15 11:45:42.229 [EjecutarProceso.java:194] [DEBUG] CLI <-- <transicion id="96555" nombre="PRUEBA BAT" ts="1458060342"><fin estado="falla" valor="1314"/></transicion>
+2016-03-15 11:45:42.229 [EjecutarProceso.java:195] [INFO] Termino el proceso de id #96555 con status 1314
+2016-03-15 11:45:42.229 [MensajeProceso.java:194] [DEBUG] actualizarEstadoProceso::actualizando estados con:parametroP=./runAsUser/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe';estado=1314
+2016-03-15 11:45:42.229 [MensajeProceso.java:196] [DEBUG] MensajeProceso solicita lista estado mensajes...
+2016-03-15 11:45:43.230 [EjecutarProceso.java:234] [DEBUG] [96555] FIN pid=6748 exit=cmd='./runAsUser/runAsUser.exe C:\Procesos marcos.barroso@accusysargbsas.local ******** "C:\WINDOWS\system32\cmd.exe" "/c SleepVS_2.exe 60 true"; exec C:\WINDOWS\system32\cmd.exe'
+2016-03-15 11:46:09.603 [ServiceDump.java:96] [INFO] Dump!
+2016-03-15 11:46:39.596 [Heartbeat.java:30] [DEBUG] CLI <-- <latido/>
+2016-03-15 11:46:39.603 [ServiceDump.java:96] [INFO] Dump!

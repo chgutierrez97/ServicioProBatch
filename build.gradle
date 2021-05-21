@@ -1,0 +1,122 @@
+apply plugin: 'java'
+
+//def VM_SHARED_DIR = 'D:\\comparSolaris'
+//def VM_SHARED_DIR = 'D:\\ProbatchJavaServicioWin\\pbwin'
+
+def MAIN_CLASS = 'ast.servicio.probatch.service.ServicioAgente'
+
+// sistema operativo destino donde el componente sera deployado
+def TARGET_OS = 'windows'
+
+if (TARGET_OS.toLowerCase().contains("windows")) {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+} else {
+    sourceCompatibility = 1.5
+    targetCompatibility = 1.5
+    compileJava.options.bootClasspath = 'D:\\Java\\jdk1.5.0_18\\jre\\lib\\rt.jar'
+}
+
+println("sourceCompatibility: ${sourceCompatibility}")
+
+//compileJava.options.fork = true
+//compileJava.options.forkOptions.executable = 'D:\\Java\\jdk1.5.0_14\\bin\\javac'
+
+/* Declaro como repositorios al directorio local lib/ y al repositorio central de maven */
+repositories {
+    flatDir { dirs 'lib' }
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/junit/junit
+    //testCompile group: 'junit', name: 'junit', version: '3.8.2'
+
+    /* Dependencias en lib/ */
+    compile name: 'jna'
+    compile name: 'logback-classic-1.0.1'
+    compile name: 'logback-core-1.0.1'
+    compile name: 'slf4j-api-1.6.4'
+    compile name: 'commons-lang3-3.1'
+    compile name: 'jt400'
+
+    /* Las dependencias a continuacion existen en lib/ pero no aparecen en el viejo archivo config/MANIFEST.MF */
+    compile name: 'commons-compiler'
+    compile name: 'janino'
+    compile name: 'log4j-1.2.16'
+	
+	
+	
+	//testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    //testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+
+    // https://mvnrepository.com/artifact/junit/junit
+	//testCompile group: 'junit', name: 'junit', version: '4.13.1'
+
+
+}
+
+
+
+
+jar.doFirst {
+    /* Configura el archivo MANIFEST del jar.
+     * Establece como classpath todas las depenencias de compilacion con el prefijo lib/
+      * Agrega al classpath el path config/logback.xml para sobreescribir la configuracion de logback por defecto (aquella en el propio jar)*/
+    manifest {
+        def classpath = configurations.compile.collect { "lib/${it.getName()}" }.join(' ')
+        classpath += ' config/logback.xml'
+        attributes("Manifest-Version": "2.0",
+                "Main-Class": MAIN_CLASS,
+                "Class-Path": classpath
+        )
+    }
+}
+jar.baseName = 'ServicioAgente'
+
+/* Esta tarea es solo para desarrollo. Copia el jar generado por el build y lo
+ * pega en el directorio compartido de una VM de prueba. La tarea depende
+  * de "jar" */
+task copyToVm {
+    group = "probatch"
+    description = "Copia el jar de probatch al directorio compartido de la maquina virtual."
+    doLast {
+        copy {
+				from "${buildDir}/libs/${jar.baseName}.jar"
+            into VM_SHARED_DIR
+        }
+    }
+}
+copyToVm.dependsOn(jar)
+
+/* Copia todas las dependencias al directorio build/dependencies/lib */
+task copyDependencies {
+    group = "probatch"
+    description = "Copia todas las dependencias del proyecto al directorio build/dependencies/lib."
+    doLast {
+        copy {
+            from configurations.compile
+            into "${buildDir}/dependencies/lib"
+        }
+    }
+}
+
+/* Construye el JAR entregable y copia las dependencias en el directorio build/dependencies/lib */
+task buildFull {
+    doLast {}
+}
+buildFull.dependsOn(jar)
+buildFull.dependsOn(copyDependencies)
+
+/* Si el sistema operativo NO es windows, entonces excluyo los source files especializados para windows con Acl */
+task checkForWindows() {
+    doFirst {
+        def osName = TARGET_OS
+        println("osName: ${osName}")
+        if (!osName.toLowerCase().contains("windows")) {
+            println("Excluyendo clase AclWindowsService de build final");
+            sourceSets.main.java.exclude "ast/servicio/probatch/os/service/impl/AclWindowsService.java"
+        }
+    }
+}
+compileJava.dependsOn(checkForWindows)

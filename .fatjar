@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Feb 16 11:10:28 ART 2016
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=ServicioAgente.jar
+manifest.mergeall=true
+manifest.mainclass=ast.servicio.probatch.service.ServicioAgente
+manifest.file=config\\MANIFEST.MF
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
